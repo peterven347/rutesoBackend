@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken")
 const router = express.Router()
 const path = require('path');
 const fs = require('fs');
-const stripe = require('stripe')('sk_test_51P3QJKRp1Ag2868eHo9QAbdKQZALS5FK7SWJTOOZkDMbyvZ8Wen5dOe5VZoK1vuRRr0x9pEEdH0mKmFjHkuwOcZU00CvdKfl3t');
+const stripe = require('stripe')(process.env.SK_TEST);
 
 
 
@@ -218,7 +218,7 @@ router.post('/payment-sheet', async (req, res) => {
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
     customer: customer.id,
-    publishableKey: 'pk_test_51P3QJKRp1Ag2868eLwYfP27btVnM23crYTDMR260uqLIl8dgJ31qCIdNnER2Sh3SGvumtivvjB72w5MRJqiRpImY00rdqer6zq'
+    publishableKey: process.env.PUBLISHABLEKEY
   });
 });
 
