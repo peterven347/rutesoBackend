@@ -218,7 +218,7 @@ router.post('/payment-sheet', async (req, res) => {
     paymentIntent: paymentIntent.client_secret,
     ephemeralKey: ephemeralKey.secret,
     customer: customer.id,
-    publishableKey: process.env.PUBLISHABLEKEY
+    publishableKey: process.env.PUBLISHABLE_KEY
   });
 });
 
