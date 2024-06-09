@@ -42,7 +42,6 @@ router.get("/", (req, res) => {
 router.get("/history", async(req, res) => {
   await Order.findOne({date: "Fri Apr 05 2024"}).lean().exec()
   .then(r => res.json(r.orders))
-  console.log(r.orders)
   // .then(res.end())
 })
 
